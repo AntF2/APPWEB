@@ -1,20 +1,19 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <a class="active" href="login"> Inicia Sesión </a>
-    <a class="inactive underlineHover" href="registro" >Registrarse </a>
+    <!-- Enlaces de navegación -->
+    <a class="inactive underlineHover" href="registro">Registrarse</a>
+    <a class="active" href="login">Inicia Sesión</a>
 
-    <!-- Icon -->
+    <!-- Icono -->
     <div class="fadeIn first">
-      <img src="https://cdn-icons-png.flaticon.com/512/6326/6326055.png" id="icon"  />
+      <img src="https://cdn-icons-png.flaticon.com/512/6326/6326055.png" id="icon" />
     </div>
 
-    <!-- Login Form -->
+    <!-- Formulario de Login -->
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-      <input [(ngModel)]="email" type="text" id="login" class="fadeIn second" name="email" placeholder="a@ejemplo.cm" required>
-      <input [(ngModel)]="password" type="password" id="password" class="fadeIn second" name="password" placeholder="contraseña" required>
-      <input type="submit" class="fadeIn fourth" value="Ingresar">
+      <input [(ngModel)]="email" type="text" id="login" class="fadeIn second" name="email" placeholder="a@ejemplo.cm" required />
+      <input [(ngModel)]="password" type="password" id="password" class="fadeIn second" name="password" placeholder="Contraseña" required />
+      <input type="submit" class="fadeIn fourth" value="Ingresar" />
     </form>
-
-
   </div>
 </div>

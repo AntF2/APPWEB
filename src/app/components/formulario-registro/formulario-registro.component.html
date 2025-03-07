@@ -12,15 +12,26 @@
     <form #registroForm="ngForm" (ngSubmit)="register(registroForm)">
       <input type="text" id="name" class="fadeIn second" name="name" [(ngModel)]="nombre" placeholder="Nombre completo"
         required />
+
       <input type="email" id="email" class="fadeIn second" name="email" [(ngModel)]="email"
         placeholder="Correo electrónico" required />
+
       <input type="password" id="password" class="fadeIn second" name="password" [(ngModel)]="password"
         placeholder="Contraseña" required />
+
       <input type="password" id="confirm-password" class="fadeIn second" name="confirm-password"
         [(ngModel)]="confirmPassword" placeholder="Confirmar contraseña" required />
+
       <div *ngIf="password && confirmPassword && password !== confirmPassword" class="error-message">
         Las contraseñas no coinciden.
       </div>
+
+      <!-- Campo de selección de rol -->
+      <select class="fadeIn second" name="role" [(ngModel)]="role" required>
+        <option value="estudiante">Estudiante</option>
+        <option value="profesor">Profesor</option>
+      </select>
+
       <input type="submit" class="fadeIn fourth" value="Registrarse"
         [disabled]="!registroForm.valid || password !== confirmPassword" />
     </form>

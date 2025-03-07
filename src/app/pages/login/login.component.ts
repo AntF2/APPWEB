@@ -1,38 +1,40 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor (private sercivio: LoginService, private route: Router) {}
+  email: string = '';
+  password: string = '';
 
+  constructor(private sercivio: LoginService, private route: Router) {}
 
-
-  email: any;
-  password: any;
-
-  login(loginForm: any) {
+  // Función para manejar el login
+  login(loginForm: any): void {
     console.log(loginForm.value);
-    this.sercivio.postLogin(loginForm.value).subscribe(acceso=>{
-      console.log(acceso);
-      let token = acceso.accesstoken
-      if(token! = ''){
-      localStorage.setItem("login", "true")
-      this.route.navigate(['private']);
+
+    // Llamada al servicio para hacer login
+    this.sercivio.postLogin(loginForm.value).subscribe(
+      acceso => {
+        console.log(acceso);
+        let token = acceso.accesstoken;
+
+        // Verifica si se obtuvo un token válido
+        if (token !== '') {
+          localStorage.setItem('login', 'true'); // Guarda el estado de login
+          this.route.navigate(['docente']); // Redirige a la página privada (ajustar ruta si es necesario)
+        }
+      },
+      error => {
+        console.error('Error de autenticación:', error); // Muestra el error si falla la autenticación
       }
-    });
+    );
   }
-
-  /*ngOnInit() {
-    this.sercivio.getLogin().subscribe()
-  }*/
-
-
 }

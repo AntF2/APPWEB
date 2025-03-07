@@ -15,6 +15,13 @@
       "name": "Anthony",
       "confirm-password": "20032004",
       "id": 105
+    },
+    {
+      "email": "k@gmail.com",
+      "password": "$2a$10$bLKz78uPH5L7qyag2t685eyclUa671FRTp5UPywBy6KAbwvV3aSZe",
+      "name": "Karla",
+      "confirm-password": "1234",
+      "id": 106
     }
   ]
 }
