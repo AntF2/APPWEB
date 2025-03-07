@@ -1,0 +1,20 @@
+{
+  "usuarios": [
+    {}
+  ],
+  "users": [
+    {},
+    {
+      "email": "ant@gmail.com",
+      "password": "$2a$10$dWyEZ5qpGacJV6ILQlxpb.jh3.LPzzeBR5dHVW4RWx/nJddgpqefK",
+      "id": 104
+    },
+    {
+      "email": "lomasbueno5000@gmail.com",
+      "password": "$2a$10$25LvpF9526oEywuaCEWBmOPWhGQe.GcOS2lvuZlXLt6PKeOhDHHbO",
+      "name": "Anthony",
+      "confirm-password": "20032004",
+      "id": 105
+    }
+  ]
+}
